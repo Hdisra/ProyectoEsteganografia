@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF8"?>
+<project name="Esteganografia" default="compile" basedir=".">
+  <target name="compile" description="compilar el código java">
+    <mkdir dir="build"/>
+    <javac srcdir="src" destdir="build" deprecation="on" source="1.8" target="1.8" includeantruntime="false"/>
+  </target>
+  <target name="run" depends="compile" description="Ejecuta el programa">
+    <java fork="true" classname="EsteganografiaArchivos">
+      <classpath>
+	<path location="build"/>
+      </classpath>
+    </java>
+  </target>
+  <target name="clean" description="borrar los archivos">
+    <delete dir="build"/>
+  </target>
+</project>
